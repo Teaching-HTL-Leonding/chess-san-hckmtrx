@@ -147,6 +147,7 @@ char[][] ASCII_CHESS_BOARD = @" _____ _____ _____ _____ _____ _____ _____ _____
 
         if (capture)
         {
+            newPosition.Y += (enPassant ? (isWhite ? -1 : 1) : 0);
             var (vertical, horizontal) = PieceIndexToBoardIndex(newPosition.Y, newPosition.X);
             var takenPiece = ASCII_CHESS_BOARD[vertical][horizontal];
 
